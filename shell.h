@@ -3,6 +3,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-void get_input(int argc, char *argv, char inputp[120]);
-void writer(const char *input);
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+void reader(char *input, size_t counter);
+void prompt();
+int _putchar(char c);
 #endif
