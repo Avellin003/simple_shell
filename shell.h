@@ -5,4 +5,4 @@
 #include <string.h>
 void get_input(int argc, char *argv, char inputp[120]);
 void writer(const char *input);
-#en
+#endif
