@@ -13,5 +13,5 @@ void reader(char *input, size_t counter);
 void prompt(void);
 int _putchar(char c);
 void access_input(char *command, char *array[], char *env_vars[]);
-int main(void);
+int shell_prompt(void);
 #endif
