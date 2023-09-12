@@ -9,6 +9,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <unistd.h>
+void my_exit(void);
 void reader(char *input, size_t counter);
 void prompt(void);
 int _putchar(char c);

@@ -78,4 +78,3 @@ int shell_prompt(void)
 	}
 	return (0);
 }
-
