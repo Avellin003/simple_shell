@@ -9,15 +9,16 @@ int parser(char *input, char **tokens)
 {
 	int counter = 0;
 	char *token = strtok(input, " ");
+
 	while (token != NULL)
 	{
-		if (token_count >= 20) 
+		if (counter >= 20)
 		{
 			fprintf(stderr, "Too many tokens.\n");
 			exit(EXIT_FAILURE);
 		}
-		tokens[token_count] = strdup(token);
-		token_count++;
+		tokens[counter] = strdup(token);
+		counter++;
 
 		token = strtok(NULL, " ");
 	}

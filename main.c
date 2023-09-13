@@ -15,30 +15,33 @@ int main(void)
 		{
 			my_exit();/*terminates if it's "exit"*/
 		}
+		else if (strcmp(input, "cd") == 0)
+		{
+			if (my_cd(getcwd(NULL, 0), input) != 0)
+			{
+				fprintf(stderr, "can't change directory/n");
+			}
+		}
+		else if
+			(strcmp(input, "ls") == 0 || strcmp(input, "help") == 0)
+			{
+				pid_t pid = fork();
+
+				if (pid < 0)
+					perror("fork");
+				/*executes help or ls*/
+				else if (pid == 0)
+				{
+					exe(input);
+					exit(0);
+				}
+				else
+				{
+					int status;
+
+					waitpid(pid, &status, 0);
+				}
+			}
 	}
-	pid_t pid = fork();
-
-        if (pid < 0) {
-            perror("Fork failed");
-            exit(EXIT_FAILURE);
-        } else if (pid == 0) { // Child process
-            // Execute the user input as a shell command
-            int result = execlp("/bin/sh", "/bin/sh", "-c", input, NULL);
-
-            if (result == -1) {
-                perror("Command execution failed");
-                exit(EXIT_FAILURE);
-            }
-
-            // This code will not be reached if the exec succeeds
-            exit(EXIT_SUCCESS);
-        } else { // Parent process
-            // Wait for the child process to complete
-            int status;
-            if (waitpid(pid, &status, 0) == -1) {
-                perror("Wait failed");
-                exit(EXIT_FAILURE);
-            }
-        }
 	return (0);
-	}
+}

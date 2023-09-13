@@ -3,8 +3,10 @@
 #define MAX_ARRAY_SIZE 100
 
 /**
- * acccess_input - handles fork
- *
+ * access_input - handles fork
+ * @command: input
+ * @array: pointer array
+ * @env_vars: environment variable
  * Return: array of result
  */
 void access_input(char *command, char *array[], char *env_vars[])
