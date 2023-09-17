@@ -6,7 +6,7 @@
  */
 void prompt(void)
 {
-	_putchar('$');
-	_putchar(' ');
+	putchar('$');
+	putchar(' ');
 	fflush(stdout); /*fflush allows other inputs to be printed */
 }

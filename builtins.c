@@ -9,7 +9,7 @@ int my_cd(const char *path, const char *wd)
 {
 	char new[120];
 
-if (snprintf(new, sizeof(new), "%s/%s", wd, path) >= sizeof(new))
+if (snprintf(new, sizeof(new), "%s/%s", wd, path) != sizeof(new))
 {
 	fprintf(stderr, "too long\n");
 	return (1);
@@ -29,4 +29,23 @@ if (snprintf(new, sizeof(new), "%s/%s", wd, path) >= sizeof(new))
 void my_exit(void)
 {
 	exit(0);
+}
+
+/**
+ * printenv - print current environment
+ * @env - environment variables
+ * Return: success 0.
+ */
+int print_env(char **argv, char **env)
+{
+	int i;
+
+	i = 0;
+	while (env[i] != NULL)
+	{
+		execve("%s\n", argv, env);
+		i++;
+		perror("execve");
+	}
+	return (0);
 }
