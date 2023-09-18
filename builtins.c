@@ -2,6 +2,7 @@
 /**
  * my_cd - changes the current directory
  * @path: arguments that provides dive in path
+ * @wd: the working directory
  * Return: 0 if sucess else 1
  * wd: gets my curerrent directory
  */
@@ -9,11 +10,11 @@ int my_cd(const char *path, const char *wd)
 {
 	char new[120];
 
-if (snprintf(new, sizeof(new), "%s/%s", wd, path) != sizeof(new))
-{
-	fprintf(stderr, "too long\n");
-	return (1);
-}
+	if (snprintf(new, sizeof(new), "%s/%s", wd, path) != sizeof(new))
+	{
+		fprintf(stderr, "too long\n");
+		return (1);
+	}
 
 	if (chdir(path) != 0)
 	{
@@ -30,10 +31,10 @@ void my_exit(void)
 {
 	exit(0);
 }
-
 /**
- * printenv - print current environment
- * @env - environment variables
+ * print_env - print current environment
+ * @env: environment variables
+ * @argv: pointer containing the input command
  * Return: success 0.
  */
 int print_env(char **argv, char **env)
