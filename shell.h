@@ -24,5 +24,5 @@ void prompt(void);
 int _putchar(char *);
 /*void access_input(char *, char *, char *);*/
 int non_interactive(void);
-int *print_env(char *env);
+int print_env(char **argv, char **env);
 #endif

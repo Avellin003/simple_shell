@@ -37,16 +37,16 @@ void my_exit(void)
  * @argv: pointer containing the input command
  * Return: success 0.
  */
-int *print_env(char *env)
+int print_env(char **argv, char **env)
 {
-	int i = 0;
+	int i;
 
-	while (env[i] != '\0')
+	i = 0;
+	while (env[i] != NULL)
 	{
-		getenv(env);
-		printf("%d", env[i]);
-		perror("getenv");
+		execve("%s\n", argv, env);
 		i++;
+		perror("execve");
 	}
 	return (0);
 }
