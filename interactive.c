@@ -12,15 +12,11 @@ int interactive(void)
 		prompt();
 		reader(input, sizeof(input));/*tracks the size into counter*/
 		if (strcmp(input, "exit") == 0)
-		{
 			my_exit();
-		}
 		else if (strcmp(input, "cd") == 0)
 		{
 			if (my_cd(getcwd(NULL, 0), input) != 0)
-			{
 				fprintf(stderr, "can't change directory\n");
-			}
 		}
 		else if (strcmp(input, "ls") == 0 || strcmp(input, " ") == 0
 				|| strcmp(input, "help") == 0)
