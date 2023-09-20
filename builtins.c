@@ -34,7 +34,7 @@ void my_exit(void)
 /**
  * print_env - print current environment
  * @env: environment variables
- * Return: success 0
+ * Return: success 0.
  */
 int *print_env(char *env)
 {
@@ -43,7 +43,7 @@ int *print_env(char *env)
 	while (env[i] != '\0')
 	{
 		getenv(env);
-		printf("%d", env[i]);
+		_putchar(env);
 		perror("getenv");
 		i++;
 	}

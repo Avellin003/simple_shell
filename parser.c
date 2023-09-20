@@ -1,4 +1,5 @@
 #include "shell.h"
+#define SIZE 64
 /**
  * parser - devides arguments form commands
  * @input: user's input
@@ -12,7 +13,7 @@ int parser(char *input, char **tokens)
 
 	while (token != NULL)
 	{
-		if (counter >= MAX_ARRAY_SIZE - 1)
+		if (counter >= SIZE - 1)
 		{
 			fprintf(stderr, "Too many tokens.\n");
 			exit(EXIT_FAILURE);

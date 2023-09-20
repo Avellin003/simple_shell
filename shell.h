@@ -9,7 +9,6 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <unistd.h>
-#define MAX_ARRAY_SIZE 100
 /*interactive.c*/
 int interactive(void);
 /*builtins.c*/
