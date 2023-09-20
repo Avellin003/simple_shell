@@ -40,11 +40,11 @@ void access_input(char *command, char *array[], char *env_vars[])
 	}
 }
 /**
- * main - non_interactive part of the shell
+ * non_interactive - non_interactive part of the shell
  *
  * Return: Success 0.
  */
-int main(void)/*it was non_interactive before*/
+int non_interactive(void)/*it was non_interactive before*/
 {
 	char *token;
 	char input[MAX_INPUT_SIZE];
