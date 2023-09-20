@@ -1,9 +1,9 @@
 #include "shell.h"
 /**
- * interactive - interactive part of the shell
+ * main - interactive part of the shell
  * Return: 0 if sucess and exits upon "exit"input
  */
-int interactive(void)
+int main(void)/*it was interactive before*/
 {
 	char input[100]; /*input maximum number*/
 
