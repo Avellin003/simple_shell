@@ -34,14 +34,11 @@ void my_exit(void)
 /**
  * print_env - print current environment
  * @env: environment variables
- * @argv: pointer containing the input command
  * Return: success 0
  */
 int *print_env(char *env)
 {
-	int i;
-
-	i = 0;
+	int i = 0;
 
 	while (env[i] != '\0')
 	{
