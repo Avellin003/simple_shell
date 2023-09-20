@@ -34,6 +34,7 @@ void my_exit(void)
 /**
  * print_env - print current environment
  * @env: environment variables
+ * @argv: pointer containing the input command
  * Return: success 0.
  */
 int *print_env(char *env)
@@ -43,7 +44,7 @@ int *print_env(char *env)
 	while (env[i] != '\0')
 	{
 		getenv(env);
-		_putchar(env);
+		printf("%d", env[i]);
 		perror("getenv");
 		i++;
 	}

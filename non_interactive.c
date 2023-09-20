@@ -24,8 +24,8 @@ void access_input(char *command, char *array[], char *env_vars[])
 	{
 		if (access(command, F_OK) == 0)
 		{
-			execvp(command, array);
-			perror("execvp");
+			execve(command, array, env_vars);
+			perror("execve");
 			exit(EXIT_FAILURE);
 		}
 		else
