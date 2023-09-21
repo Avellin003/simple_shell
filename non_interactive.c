@@ -1,6 +1,6 @@
 #include "shell.h"
-#define MAX_INPUT_SIZE 100
-#define MAX_ARRAY_SIZE 100
+#define MAX_INPUT_SIZE 1024
+#define MAX_ARRAY_SIZE 1024
 
 /**
  * access_input - handles fork

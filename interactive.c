@@ -28,7 +28,8 @@ int interactive(void) /*it was interactive before*/
 			else if (pid == 0)
 			{
 				exe(input);
-				exit(0);
+				/*exit(0);*/
+				my_exit();
 			}
 			else
 			{
@@ -40,7 +41,8 @@ int interactive(void) /*it was interactive before*/
 		else if (strcmp(input, "env") == 0)
 		{
 			exe(input);
-			exit(0);
+			/*exit(0);*/
+			my_exit();
 		}
 	}
 	return (0);
