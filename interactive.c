@@ -5,7 +5,7 @@
  */
 int interactive(void) /*it was interactive before*/
 {
-	char input[100]; /*input maximum number*/
+	char input[1024]; /*input maximum number*/
 
 	while (1)
 	{
