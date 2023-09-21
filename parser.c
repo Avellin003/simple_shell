@@ -8,7 +8,7 @@
 int parser(char *input, char **tokens)
 {
 	int counter = 0;
-	char *token = strtok(input, " ");
+	char *token = strtok(input, " \t\a\n\r");
 
 	while (token != NULL)
 	{

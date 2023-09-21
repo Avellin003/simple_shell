@@ -30,7 +30,7 @@ void access_input(char *command, char *array[], char *env_vars[])
 		}
 		else
 		{
-			write(STDERR_FILENO, "./shell: No such file or directory\n", 35);
+			/*write(STDERR_FILENO, "./shell: No such file or directory\n", 35);*/
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -53,12 +53,13 @@ int non_interactive(void)/*it was non_interactive before*/
 
 	while (1)
 	{
-		write(STDOUT_FILENO, "#cisfun$ ", 9);
+		if (isatty(STDIN_FILENO))
+			write(STDOUT_FILENO, "#cisfun$ ", 9);
 		if (fgets(input, MAX_INPUT_SIZE, stdin) == NULL)
 		{
 			if (feof(stdin))
 			{
-				write(STDOUT_FILENO, "\n", 1);
+				/*write(STDOUT_FILENO, "\n", 1);*/
 				exit(EXIT_SUCCESS);
 			}
 			else
