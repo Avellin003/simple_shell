@@ -27,7 +27,7 @@ int interactive(void) /*it was interactive before*/
 				perror("fork");
 			else if (pid == 0)
 			{
-				exe(input);
+				exe(input, NULL);
 				/*exit(0);*/
 				my_exit();
 			}
@@ -40,7 +40,7 @@ int interactive(void) /*it was interactive before*/
 		}
 		else if (strcmp(input, "env") == 0)
 		{
-			exe(input);
+			exe(input, NULL);
 			/*exit(0);*/
 			my_exit();
 		}
