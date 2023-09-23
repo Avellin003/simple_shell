@@ -51,8 +51,8 @@ void access_input(char *command, char *array[], char *env_vars[])
 		}
 		else
 		{
-			/*write(STDERR_FILENO, "./shell: No such file or directory\n", 35);*/
-			exit(EXIT_FAILURE);
+			fprintf(stderr, "./hsh: %d: %s: not found\n", 1, command);
+			exit(127);
 		}
 	}
 	else
